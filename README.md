@@ -103,13 +103,12 @@
 	getFullName.call(personOne, "Tesla", "United States");    // outputs Elon Musk, Tesla, United States
 	getFullName.call(personTwo, "Facebook", "United States");    // outputs Mark Zuckerberg, Facebook, United States
    ```
+   **Apply:** The apply() method is similar to the call() method. The only difference is that the apply() method takes an array as the argument whereas they were taken individually as arguments in the case of the call() method.
 
-   **Apply:** The apply() method is similar to the call() method. The only difference is that the apply() method takes an array as the argument whereas they were taken    individually as arguments in the case of the call() method.
-
-  **Syntax**
-   ```javascript
-   functionName.apply(thisArgument, functionArgsArray);
-   ```
+   **Syntax**
+    ```javascript
+      functionName.apply(thisArgument, functionArgsArray);
+    ```
 
    ```javascript
    const personOne = {
@@ -134,21 +133,22 @@
    **bind:** The bind() method is used to create a new function from another function with a given object as the this argument. It creates a copy of the function and then binds it to the object for which it was called. It does not immediately invoke the function and the new copy needs to be invoked separately.
 
    ```javascript
-   const personOne = {
-  firstName : "Elon",
-  secondName : "Musk"
-}
+    const personOne = {
+     firstName : "Elon",
+     secondName : "Musk"
+   }
 
-const getFullName = function(company, country) {
-  console.log(this.firstName + " " + this.secondName + ", " + company + ", " + country);
-}
+    const getFullName = function(company, country) {
+     console.log(this.firstName + " " + this.secondName + ", " + company + ", " + country);
+    }
 
-const getPersonOneDetails = getFullName.bind(personOne, ["Tesla", "United States"]); 
-getPersonOneDetails();    // outputs Elon Musk, Tesla, United States
+    const getPersonOneDetails = getFullName.bind(personOne, ["Tesla", "United States"]); 
+     getPersonOneDetails();    // outputs Elon Musk, Tesla, United States
    ```
    In the above example, calling the bind method on 'getFullName' creates a copy of it, which is assigned to 'getPersonOneDetails'. When the 'getPersonOneDetails' is called separately, we will get the desired output.
 
    Call and apply are pretty interchangeable. Both execute the current function immediately. You need to decide whether it’s easier to send in an array or a comma separated list of arguments. You can remember by treating Call is for **comma** (separated list) and Apply is for **Array**.
+   
 
    Whereas Bind creates a new function that will have `this` set to the first parameter passed to bind().
 
