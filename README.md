@@ -20,7 +20,15 @@
 | 2   | [What is the difference between Call, Apply and Bind](#what-is-the-difference-between-call-apply-and-bind)                                                                                                           |                                                 
 | 3   | [What is JSON and its common operations](#what-is-json-and-its-common-operations)                                                                                 |
 | 4  | [What is debouncing](#what-is-debouncing)  
-  
+| 5  | [What is throttling](#what-is-throttling)  
+| 6  | [What is optional chaining](#what-is-optional-chaining)  
+| 7  | [What is an event flow](#what-is-an-event-flow)   
+| 8  | [What is event bubbling](#what-is-event-bubbling)        
+| 9  | [What is event capturing](#what-is-event-capturing)  
+| 10  | [What is a promise](#what-is-a-promise) 
+| 11  | [Why do you need a promise](#why-do-you-need-a-promise)  
+| 12  | [What are the three states of promise](#what-are-the-three-states-of-promise)  
+              
 
 1. ### What is Hoisting in JavaScript and how to avoid it
 
@@ -219,5 +227,125 @@
 
      **[⬆ Back to Top](#table-of-contents)**
 
+5. ### What is throttling?
 
+     Throttling is a technique used to limit the execution of an event handler function, even when this event triggers continuously due to user actions. The common use cases are browser resizing, window scrolling etc.
 
+     The below example creates a throttle function to reduce the number of events for each pixel change and trigger scroll event for each 100ms except for the first event.
+
+     ```js
+     const throttle = (func, limit) => {
+       let inThrottle;
+       return (...args) => {
+         if (!inThrottle) {
+           func.apply(this, args);
+           inThrottle = true;
+           setTimeout(() => (inThrottle = false), limit);
+         }
+       };
+     };
+     window.addEventListener("scroll", () => {
+       throttle(handleScrollAnimation, 100);
+     });
+     ```
+ 
+     **[⬆ Back to Top](#table-of-contents)**
+
+6. ### What is optional chaining?
+
+     According to MDN official docs, the optional chaining operator (?.) permits reading the value of a property located deep within a chain of connected objects without having to expressly validate that each reference in the chain is valid.
+
+     The ?. operator is like the . chaining operator, except that instead of causing an error if a reference is nullish (null or undefined), the expression short-circuits with a return value of undefined. When used with function calls, it returns undefined if the given function does not exist.
+
+     ```js
+      const adventurer = {
+        name: 'Alice',
+        cat: {
+          name: 'Dinah'
+        }
+      };
+
+      const dogName = adventurer.dog?.name;
+      console.log(dogName);
+      // expected output: undefined
+
+      console.log(adventurer.someNonExistentMethod?.());
+      // expected output: undefined
+     ```
+
+      **[⬆ Back to Top](#table-of-contents)**
+ 
+ 7. ### What is an event flow
+
+    Event flow is the order in which event is received on the web page. When you click an element that is nested in various other elements, before your click actually reaches its destination, or target element, it must trigger the click event for each of its parent elements first, starting at the top with the global window object.
+    There are two ways of event flow
+
+    1. Top to Bottom(Event Capturing)
+    2. Bottom to Top (Event Bubbling)
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+8. ### What is event bubbling
+
+    Event bubbling is a type of event propagation where the event first triggers on the innermost target element, and then successively triggers on the ancestors (parents) of the target element in the same nesting hierarchy till it reaches the outermost DOM element.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+9. ### What is event capturing
+
+    Event capturing is a type of event propagation where the event is first captured by the outermost element, and then successively triggers on the descendants (children) of the target element in the same nesting hierarchy till it reaches the innermost DOM element.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+10. ### What is a promise
+
+    A promise is an object that may produce a single value some time in the future with either a resolved value or a reason that it’s not resolved(for example, network error). It will be in one of the 3 possible states: fulfilled, rejected, or pending.
+
+    The syntax of Promise creation looks like below,
+
+    ```javascript
+    const promise = new Promise(function (resolve, reject) {
+      // promise description
+    });
+    ```
+
+    The usage of a promise would be as below,
+
+    ```javascript
+    const promise = new Promise(
+      (resolve) => {
+        setTimeout(() => {
+          resolve("I'm a Promise!");
+        }, 5000);
+      },
+      (reject) => {}
+    );
+
+    promise.then((value) => console.log(value));
+    ```
+     Find more details on promise below,
+    
+    
+     <p>
+	<a href=https://zerotomastery.io/?utm_source=github&utm_medium=sponsor&utm_campaign=javascript-interview-questions target=_blank>
+	Link
+     </a>
+    </p>
+   
+    **[⬆ Back to Top](#table-of-contents)**
+
+11. ### Why do you need a promise
+
+    Promises are used to handle asynchronous operations. They provide an alternative approach for callbacks by reducing the callback hell and writing the cleaner code.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+12. ### What are the three states of promise
+
+    Promises have three states:
+
+    1. **Pending:** This is an initial state of the Promise before an operation begins
+    2. **Fulfilled:** This state indicates that the specified operation was completed.
+    3. **Rejected:** This state indicates that the operation did not complete. In this case an error value will be thrown.
+
+    **[⬆ Back to Top](#table-of-contents)**
