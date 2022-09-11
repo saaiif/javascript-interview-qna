@@ -323,13 +323,12 @@
 
     promise.then((value) => console.log(value));
     ```
-     Find more details on promise below,
-    
+      below,
     
      <p>
-	<a href=https://zerotomastery.io/?utm_source=github&utm_medium=sponsor&utm_campaign=javascript-interview-questions target=_blank>
-	Link
-     </a>
+       Find more details on promise <a href=https://www.linkedin.com/posts/saif-mujawar_promises-activity-6962982433537343488-pVxU?utm_source=share&utm_medium=member_desktop target=_blank>
+	here
+      </a>
     </p>
    
     **[⬆ Back to Top](#table-of-contents)**
