@@ -391,13 +391,13 @@
       A cookie is a piece of data that is stored on your computer to be accessed by your browser. Cookies are saved as key/value pairs.
       For example, you can create a cookie named username as below,
 
-    ```javascript
-     document.cookie = "username=John";
-    ```
+      ```javascript
+      document.cookie = "username=John";
+      ```
 
-   ![Screenshot](images/cookie.png)
+      ![Screenshot](images/cookie.png)
 
-   **[⬆ Back to Top](#table-of-contents)**
+      **[⬆ Back to Top](#table-of-contents)**
     
  16. ### What are the differences between cookie, local storage and session storage
 
