@@ -29,9 +29,9 @@
 | 11  | [Why do you need a promise](#why-do-you-need-a-promise)  
 | 12  | [What are the three states of promise](#what-are-the-three-states-of-promise)  
 | 13  | [What are closures](#what-are-closures) 
-| 14  | [What is scope in javascript](#What-is-scope-in-javascript) 
-| 15  | [What is a Cookie](#What-is-a-Cookie) 
-| 16  | [What are the differences between cookie, local storage and session storage](#What-are-the-differences-between-cookie-local-storage-and-session-storage) 
+| 14  | [What is scope in javascript](#what-is-scope-in-javascript) 
+| 15  | [What is a Cookie](#what-is-a-cookie) 
+| 16  | [What are the differences between cookie, local storage and session storage](#what-are-the-differences-between-cookie-local-storage-and-session-storage) 
                      
                 
 
@@ -382,9 +382,9 @@
     
  14. ### What is scope in javascript
 
-      Scope is the accessibility of variables, functions, and objects in some particular part of your code during runtime. In other words, scope determines the visibility of variables and other resources in areas of your code.
+     Scope is the accessibility of variables, functions, and objects in some particular part of your code during runtime. In other words, scope determines the visibility of variables and other resources in areas of your code.
 
-    **[⬆ Back to Top](#table-of-contents)**
+  **[⬆ Back to Top](#table-of-contents)**
  
  15.  ### What is a Cookie
 
