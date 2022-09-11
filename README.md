@@ -392,7 +392,7 @@
     For example, you can create a cookie named username as below,
 
     ```javascript
-    document.cookie = "username=John";
+       document.cookie = "username=John";
     ```
 
    ![Screenshot](images/cookie.png)
