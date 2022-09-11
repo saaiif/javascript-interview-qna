@@ -28,7 +28,12 @@
 | 10  | [What is a promise](#what-is-a-promise) 
 | 11  | [Why do you need a promise](#why-do-you-need-a-promise)  
 | 12  | [What are the three states of promise](#what-are-the-three-states-of-promise)  
-              
+| 13  | [What are closures](#what-are-closures) 
+| 14  | [What is scope in javascript](#What-is-scope-in-javascript) 
+| 15  | [What is a Cookie](#What-is-a-Cookie) 
+| 16  | [What are the differences between cookie, local storage and session storage](#What-are-the-differences-between-cookie-local-storage-and-session-storage) 
+                     
+                
 
 1. ### What is Hoisting in JavaScript and how to avoid it
 
@@ -348,3 +353,62 @@
     3. **Rejected:** This state indicates that the operation did not complete. In this case an error value will be thrown.
 
     **[⬆ Back to Top](#table-of-contents)**
+
+13. ### What are closures
+
+    A closure is the combination of a function and the lexical environment within which that function was declared. i.e, It is an inner function that has access to the outer or enclosing function’s variables. The closure has three scope chains
+
+    1. Own scope where variables defined between its curly brackets
+    2. Outer function’s variables
+    3. Global variables
+
+    Let's take an example of closure concept,
+
+    ```javascript
+    function Welcome(name) {
+      var greetingInfo = function (message) {
+        console.log(message + " " + name);
+      };
+      return greetingInfo;
+    }
+    var myFunction = Welcome("John");
+    myFunction("Welcome "); //Output: Welcome John
+    myFunction("Hello Mr."); //output: Hello Mr.John
+    ```
+
+    As per the above code, the inner function(i.e, greetingInfo) has access to the variables in the outer function scope(i.e, Welcome) even after the outer function has returned.
+
+    **[⬆ Back to Top](#table-of-contents)**
+    
+ 14. ### What is scope in javascript
+
+    Scope is the accessibility of variables, functions, and objects in some particular part of your code during runtime. In other words, scope determines the visibility of variables and other resources in areas of your code.
+
+    **[⬆ Back to Top](#table-of-contents)**
+ 
+ 15.  ### What is a Cookie
+
+      A cookie is a piece of data that is stored on your computer to be accessed by your browser. Cookies are saved as key/value pairs.
+    For example, you can create a cookie named username as below,
+
+    ```javascript
+    document.cookie = "username=John";
+    ```
+
+   ![Screenshot](images/cookie.png)
+
+   **[⬆ Back to Top](#table-of-contents)**
+    
+ 16. ### What are the differences between cookie, local storage and session storage
+
+     Below are some of the differences between cookie, local storage and session storage,
+
+     | Feature                           | Cookie                             | Local storage    | Session storage     |
+     | --------------------------------- | ---------------------------------- | ---------------- | ------------------- |
+     | Accessed on client or server side | Both server-side & client-side     | client-side only | client-side only    |
+     | Lifetime                          | As configured using Expires option | until deleted    | until tab is closed |
+     | SSL support                       | Supported                          | Not supported    | Not supported       |
+     | Maximum data size                 | 4KB                                | 5 MB             | 5MB                 |
+
+     **[⬆ Back to Top](#table-of-contents)**
+   
